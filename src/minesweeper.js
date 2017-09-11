@@ -1,20 +1,7 @@
-// Blank board
-const blankLine = '  |   |  ';
-
-// Showing what a blank board looks like
-console.log('This is what an empty board will look like.');
-console.log(blankLine);
-console.log(blankLine);
-console.log(blankLine);
-
-// What the board will look like when a player guesses the first square of a row
-const guessLine = '1 |   |  ';
-
-// What the board looks like when the player reveals a bomb
-const bombLine = '  | B |  ';
-
-// Showing what a board might look like during a game
-console.log('This is what a board with a guess and a bomb on it would look like:');
-console.log(guessLine);
-console.log(bombLine);
-console.log(blankLine);
+// Creating the game board using an array
+const board = [
+  [ ' ', ' ', ' ' ],
+  [ ' ', ' ', ' ' ],
+  [ ' ', ' ', ' ' ]
+];
+console.log(board);
