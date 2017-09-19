@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-// Create a dynamically generated board.
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   let board = [
   ];
@@ -29,8 +26,8 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   let numberOfBombsPlaced = 0;
   while (numberOfBombsPlaced < numberOfBombs) {
   };
-
+let randomRowIndex = Math.floor(Math.random() * numberOfRows);
+let randomColumnIndex = Math.floor(Math.random() * numberOfRows);
 
   return board;
 };
->>>>>>> deb89320da8b6650ea55e2533abe00925f8988b4
