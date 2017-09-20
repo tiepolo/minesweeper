@@ -25,9 +25,21 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   };
   let numberOfBombsPlaced = 0;
   while (numberOfBombsPlaced < numberOfBombs) {
-  };
-let randomRowIndex = Math.floor(Math.random() * numberOfRows);
-let randomColumnIndex = Math.floor(Math.random() * numberOfRows);
-
+    //We will fix the bombs being placed on top of other bombs after we learn about Control Flow
+    let randomRowIndex = Math.floor(Math.random() * numberOfRows);
+    let randomColumnIndex = Math.floor(Math.random() * numberOfRows);
+    board[randomRowIndex][randomColumnIndex] = 'B';
+    numberOfBombsPlaced++;
+  }
   return board;
 };
+const printBoard = board => {
+  console.log(board.map(row => row.join(' | ')).join('\n'));
+};
+
+let playerBoard = generatePlayerBoard(3, 4);
+let bombBoard = generateBombBoard(3, 4, 5);
+console.log('Player Board: ')
+printBoard(playerBoard);
+console.log('Bomb Board: ')
+printBoard(bombBoard);
