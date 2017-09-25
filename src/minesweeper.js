@@ -49,7 +49,17 @@ class Board {
       }
     });
     return this._numberOfBombs;
-  };
+  }
+
+  // Let user know they won
+  hasSafeTiles() {
+    return this._numberOfTiles!== this._numberOfBombs;
+  }
+
+  //Loging the board to the console
+  print() {
+    console.log(this.board.map(row => row.join(' | ')).join('\n'));
+  }
 
 }
 
@@ -93,11 +103,6 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     numberOfBombsPlaced++;
   }
   return board;
-};
-
-//Loging the board to the console
-const printBoard = board => {
-  console.log(board.map(row => row.join(' | ')).join('\n'));
 };
 
 let playerBoard = generatePlayerBoard(3, 4);
