@@ -27,7 +27,7 @@ class Board {
   }
 
   get playerBoard() {
-    return _playerBoard;
+    return this._playerBoard;
   }
 
   // Function to allow user to flip a tiles
@@ -58,12 +58,12 @@ class Board {
     const numberOfRows = this._bombBoard.length;
     const numberOfColumns = this._bombBoard[0].length;
     let numberOfBombs = 0;
-    this.neighborOffsets.forEach(offset => {
-      const neighborRowIndex = this.rowIndex + offset[0];
-      const neighborColumnIndex = this.columnIndex + offset[1];
-      if (this.neighborRowIndex >=0 && this.neighborRowIndex < this.numberOfRows && this.neighborColumnIndex >= 0 && this.neighborColumnIndex < this.numberOfColumns) {
-        if (this._bombBoard[this.neighborRowIndex][this.neighborColumnIndex] === 'B') {
-          this.numberOfBombs++;
+    neighborOffsets.forEach(offset => {
+      const neighborRowIndex = rowIndex + offset[0];
+      const neighborColumnIndex = columnIndex + offset[1];
+      if (neighborRowIndex >=0 && neighborRowIndex < numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex < numberOfColumns) {
+        if (this._bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
+          numberOfBombs++;
         }
       }
     });
@@ -135,4 +135,4 @@ printBoard(playerBoard);
 */
 
 const g = new Game(3, 3, 3);
-g.playMove(1, 2);
+g.playMove(1, 1);
