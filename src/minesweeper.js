@@ -8,11 +8,11 @@ class Game {
     if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
       console.log('The game is over, bro!');
       this._board.print();
-    } else if (this._board.hasSafeTiles()) {
+    } else if (!this._board.hasSafeTiles()) {
       console.log('You won! Great job, bruh!');
     } else {
       console.log('Current Board:');
-      console.log(this._board.playerBoard);
+      this._board.print();
     }
   }
 }
@@ -135,4 +135,4 @@ printBoard(playerBoard);
 */
 
 const g = new Game(3, 3, 3);
-g.playMove(1, 1);
+g.playMove(1, 2);
